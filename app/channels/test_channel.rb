@@ -11,5 +11,6 @@ class TestChannel < ApplicationCable::Channel
 
   def receive(data)
     puts "Received: #{data}"
+    puts "Current user: #{current_user.inspect}"
   end
 end
