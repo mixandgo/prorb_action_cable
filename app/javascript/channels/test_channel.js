@@ -1,8 +1,9 @@
 import consumer from "channels/consumer"
 
-consumer.subscriptions.create("TestChannel", {
+const testChannel = consumer.subscriptions.create("TestChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
+    console.log("Connected")
   },
 
   disconnected() {
@@ -13,3 +14,5 @@ consumer.subscriptions.create("TestChannel", {
     // Called when there's incoming data on the websocket for this channel
   }
 });
+
+window.testChannel = testChannel
