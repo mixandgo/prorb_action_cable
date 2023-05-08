@@ -2,6 +2,9 @@ Hello
 
 <% if user_signed_in? %>
   <%= current_user.email %> is logged in
+  <%= turbo_stream_from current_user %>
 <% else %>
   <%= link_to "Log in", new_user_session_path %>
 <% end %>
+
+<%= tag.div(id: dom_id(current_user)) %>
